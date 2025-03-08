@@ -28,6 +28,7 @@ namespace MVCAssignment001
             }
 
             app.UseRouting();
+            app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>
             {
@@ -39,8 +40,7 @@ namespace MVCAssignment001
                 endpoints.MapControllerRoute
                 (
                     name:"default",
-                    pattern:"{controller}/{action}",
-                    defaults: new {controller="Movies",action="Index"}
+                    pattern:"{controller=Home}/{action=Index}/{id?}"
                 );
             });
         }
